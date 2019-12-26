@@ -44,7 +44,7 @@ router.post('/register', (req, res) => {
   });
   function generateToken(user) {
     const payload = {
-      username: user.username,
+      username: user.username, 
       id: user.id,
     };
   

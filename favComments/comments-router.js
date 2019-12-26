@@ -9,7 +9,7 @@ router.get('/topsalt', (req, res) => {
       })
       .catch(error => {
         console.log(error.message);
-        res.status(500).json({ message: 'Problem getting salty comments' });
+        res.status(500).json({ message: 'Problem getting the comments you requested' });
       });
   });
 

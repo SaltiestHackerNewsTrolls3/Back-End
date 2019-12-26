@@ -1,11 +1,9 @@
-// Update with your config settings.
-
 module.exports = {
     development: {
       client: 'sqlite3',
       useNullAsDefault: true,
       connection: {
-        filename: './database/salt.db3',
+        filename: './database/HackerSalt.db3',
       },
       pool: {
         afterCreate: (conn, done) => {
@@ -22,7 +20,7 @@ module.exports = {
     testing: {
       client: 'sqlite3',
       connection: {
-        filename: './database/test.db3',
+        filename: './database/testHackerSalt.db3',
       },
       useNullAsDefault: true,
       migrations: {
@@ -33,7 +31,7 @@ module.exports = {
       },
     },
     production: {
-      client: 'pg', // install this package
+      client: 'pg',
       connection: process.env.DATABASE_URL, // heroku sets this env variable
       migrations: {
         directory: './database/migrations',
@@ -43,7 +41,7 @@ module.exports = {
       },
     },
     datascience: {
-      client: 'pg', // install this package
+      client: 'pg',
       connection: process.env.DS_DATABASE_URL, // heroku sets this env variable
     },
   };
