@@ -1,4 +1,4 @@
-const db = require('PLACEHOLDER');
+const db = require('../database/dbConfig');
 
 module.exports = {
   add,

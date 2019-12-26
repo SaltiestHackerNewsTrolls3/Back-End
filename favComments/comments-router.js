@@ -41,7 +41,7 @@ router.get('/topsalt', (req, res) => {
       });
   });
   
-  router.get('/:id/fav/salts', validateUserId, (req, res) => {
+  router.get('/:id/fav/HackerSalt', validateUserId, (req, res) => {
     const id = req.params.id;
     Trolls.getCommentsByUserID(id)
       .then(saltyIDs => {
@@ -142,7 +142,7 @@ router.get('/topsalt', (req, res) => {
       });
   });
 
-  router.get('/salt', (req, res) => {
+  router.get('/HackerSalt', (req, res) => {
     Trolls.getTop25Saltiest()
       .then(salt => {
         res.status(200).json(salt);
