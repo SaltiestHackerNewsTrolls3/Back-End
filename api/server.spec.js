@@ -1,7 +1,7 @@
 const request = require('supertest');
 const server = require('./server');
 
-const db = require(PLACEHOLDER);
+const db = require('../database/dbconfig');
 
 describe('server.js', () => {
     it ('testing enviorment', () => {
@@ -16,7 +16,7 @@ describe('GET /', () => {
         })
     })
     it('returns JSON', () => {
-        return requuest(server)
+        return request(server)
         .get('/')
         .then(res => {
             expect(res.type).toMatch(/text/i)

@@ -21,7 +21,7 @@ describe('favorite comments', () => {
     })
     it('posts a favorite comment to the BE DB', async () => {
         restrict.mockImplementation((req, res, next) => {
-            console.log("I ran the test twice!")
+            console.log("I have ran the test!")
             req.user = { id: 1};
             next()
         })
