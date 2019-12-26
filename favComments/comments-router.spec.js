@@ -9,7 +9,7 @@ beforeEach(() => restrict.mockClear())
 describe('favorite comments', () => {
     it('get /api/comments/favorite', async () => {
         restrict.mockImplementation((req, res, next) => {
-            console.log("I ran the test!")
+            console.log("The test has been ran and has been a success or failed!")
             req.user = { id: 1};
             next()
         })
