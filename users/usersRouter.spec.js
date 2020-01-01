@@ -9,7 +9,7 @@ beforeEach(() => restrict.mockClear())
 describe('users', () => {
     it('get /api/users/list', async () => {
         restrict.mockImplementation((req, res, next) => {
-            console.log("Running the test!")
+            console.log("This test has been ran")
             req.user = { id: 1};
             next()
         })

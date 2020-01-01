@@ -11,7 +11,7 @@ router.get('/list', (req, res) => {
       })
       .catch(err => {
           console.log(err)
-          res.status(500).json({message: 'There is an Error on our end.'})
+          res.status(500).json({message: 'There is an Error on the server on our End'})
       });
   });
 
