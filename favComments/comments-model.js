@@ -1,5 +1,5 @@
-const dbDS = require('../database/dbDSConfig');
-const db = require('../database/dbconfig');
+const dbDS = require('../database/dbDSConfig.js');
+const db = require('../database/dbConfig.js');
 
 module.exports = {
   getTopSaltyComments,
@@ -14,13 +14,13 @@ module.exports = {
 };
 
 function getTopSaltyComments() {
-  return dbDS('HackerSalt')
+  return dbDS('salt')
     .orderBy('score', 'asc')
     .limit(15);
 }
 
 function getSaltyCommentsByID(commentIDs) {
-  return dbDS('HackerSalt').whereIn('id', commentIDs);
+  return dbDS('salt').whereIn('id', commentIDs);
 }
 
 function savedComment(comment) {
@@ -44,17 +44,17 @@ function removeCommentByUserID({ user_id, comment_id }) {
 }
 
 function getTop25Saltiest() {
-  return dbDS('HackerSalt')
+  return dbDS('salt')
     .select('author')
-    .avg('HackerSalt.score AS avg_score')
+    .avg('salt.score AS avg_score')
     .groupBy('author')
     .orderBy('avg_score', 'asc')
     .limit(25);
 }
 
 function saltiestComment(id) {
-  return dbDS('HackerSalt')
-    .where({ 'HackerSalt.author': id })
+  return dbDS('salt')
+    .where({ 'salt.author': id })
     .orderBy('score', 'asc')
     .limit(10);
 }
