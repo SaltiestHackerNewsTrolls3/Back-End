@@ -14,10 +14,10 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/SaltiestHackerNewsTrolls3/BackEnd"
   },
   "keywords": [],
-  "author": "",
+  "author": "Bradley Philipson",
   "license": "ISC",
   "bugs": {
     "url": ""
@@ -40,7 +40,7 @@
   "devDependencies": {
     "cross-env": "^6.0.0",
     "jest": "^24.9.0",
-    "nodemon": "^1.19.2",
+    "nodemon": "^1.19.4",
     "supertest": "^4.0.2"
   }
 }
