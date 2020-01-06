@@ -1,5 +1,5 @@
 const dbDS = require('../database/dbDSConfig.js');
-const db = require('../database/dbConfig.js');
+const db = require('../database/dbconfig.js');
 
 module.exports = {
   getTopSaltyComments,

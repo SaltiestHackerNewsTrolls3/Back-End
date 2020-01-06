@@ -1,3 +1,5 @@
+//Heroku will provide the database_url
+
 module.exports = {
     development: {
       client: 'sqlite3',
@@ -32,7 +34,7 @@ module.exports = {
     },
     production: {
       client: 'pg',
-      connection: process.env.DATABASE_URL, 
+      connection: process.env.DATABASE_URL, // heroku sets this
       migrations: {
         directory: './database/migrations',
       },
@@ -41,7 +43,7 @@ module.exports = {
       },
     },
     datascience: {
-      client: 'pg',
-      connection: process.env.DS_DATABASE_URL,
+      client: 'pg', 
+      connection: process.env.DS_DATABASE_URL, // heroku sets this
     },
   };
