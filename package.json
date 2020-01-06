@@ -4,7 +4,7 @@
   "description": "This repo will contain all of the backend work",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon index.js",
+    "server": "node index.js",
     "test": "cross-env NODE_ENV=testing jest --watch --verbose --runInBand",
     "start": "nodemon index.js",
     "docs": "apidoc -f .js -i ./ -e node_modules -o ./docs"
