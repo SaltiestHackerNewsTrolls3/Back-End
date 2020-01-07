@@ -9,8 +9,8 @@ exports.up = function(knex) {
   //       .onDelete('CASCADE')
   //       .onUpdate('CASCADE');
   //     comment.primary(['comment_id', 'user_id']);
-  //   });
-  // };
+    });
+  };
   
   exports.down = function(knex, Promise) {
     return knex.schema.dropTableIfExists('favorite_comments');
