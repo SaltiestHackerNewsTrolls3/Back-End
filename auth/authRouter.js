@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const secrets = require('../config/secrets');
 const db = require('../database/dbDSConfig.js');
 
-const Users = require('../users/users-model');
+const users = require('../users/users-model');
 
 router.post('/register', (req, res) => {
   // registration
@@ -12,7 +12,7 @@ router.post('/register', (req, res) => {
   const hash = bcrypt.hashSync(user.password, 10);
   user.password = hash;
 
-  Users.add(user)
+  users.add(user)
     .then(saved => {
       res.status(201).json(saved);
     })
@@ -25,7 +25,7 @@ router.post('/login', (req, res) => {
   // login
   let { username, password } = req.body;
 
-  Users.findBy({ username })
+  users.findBy({ username })
     .first()
     .then(user => {
       if (user && bcrypt.compareSync(password, user.password)) {
