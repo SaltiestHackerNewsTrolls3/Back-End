@@ -102,30 +102,30 @@ router.delete('/:comment_id/deletefav', (req, res) => {
 });
 
 
-// router.post('/newfav', (req, res) => {
-//   const user_id = req.user.id;
-//   const comment_id = parseInt(req.body.comment, 10);
-//   Trolls.savedComment({ //comment_id, user_id })
-//     .then(comment => {
-//       console.log(comment);
-//       res.status(201).json({ message: 'comment successfully saved' });
-//     })
-//     .catch(error => {
-//       console.log('this is error', error.message);
-//       res.status(500).json({ message: 'error saving comment to the database' });
-//     });
-// });
+router.post('/newfav', (req, res) => {
+  const user_id = req.body.user_id;
+  const comment_id = parseInt(req.body.comment, 10);
+  Trolls.savedComment({ comment_id, user_id })
+    .then(comment => {
+      console.log(comment);
+      res.status(201).json({ message: 'comment successfully saved' });
+    })
+    .catch(error => {
+      console.log('this is error', error.message);
+      res.status(500).json({ message: 'error saving comment to the database' });
+    });
+});
 
-router.post('/newfav', async(req, res) => {
-  const message = req.body
-  // const comment_id = parseInt(req.body.comment, 10);
-  try{
-    let comment = await Trolls.savedComment(message)
-    res.status(200).json(comment)
-  }catch(err){
-    res.status(500).json({message: 'err'})
-  }
-})
+// router.post('/newfav', async(req, res) => {
+//   const message = req.body
+//   // const comment_id = parseInt(req.body.comment, 10);
+//   try{
+//     let comment = await Trolls.savedComment(message)
+//     res.status(200).json(comment)
+//   }catch(err){
+//     res.status(500).json({message: 'err'})
+//   }
+// })
 
 
 router.get('/salt', (req, res) => {
