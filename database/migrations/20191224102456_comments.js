@@ -4,11 +4,11 @@ exports.up = function(knex) {
       comment
         .integer('user_id')
         .unsigned()
-        .references('id')
+        .references('user_id')
         .inTable('users')
         .onDelete('CASCADE')
         .onUpdate('CASCADE');
-      comment.primary(['comment_id', 'user_id']);
+      //comment.primary(['comment_id', 'user_id']);
     });
   };
   
